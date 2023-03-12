@@ -48,6 +48,8 @@ var marker1 = new google.maps.Marker({
 var marker2 = new google.maps.Marker({
     position: point2,
     map: map,
+    icon:"C:/Users/fonpa/Desktop/CUmusicwalk/2.png",
+    animation:google.maps.Animation.BOUNCE
 });
 var marker3 = new google.maps.Marker({
     position: point3,
@@ -99,6 +101,7 @@ function placeMarker(map, location) {
   infowindow.open(map,marker);
 }*/
 
+///Route Liner///
 var i1_1 = {lat: 13.736231863900983, lng: 100.53076185837237}
 var i1_2 = {lat: 13.736397314327107, lng: 100.5296838963318}
 var myTrip = [point1,i1_1, i1_2, point2];
@@ -137,6 +140,8 @@ var flightPath = new google.maps.Polyline({
   strokeOpacity:0.8,
   strokeWeight:5
 });
+
+///Location finder///
 infoWindow = new google.maps.InfoWindow();
 
   const locationButton = document.createElement("button");
@@ -154,10 +159,17 @@ infoWindow = new google.maps.InfoWindow();
             lng: position.coords.longitude,
           };
 
+
           infoWindow.setPosition(pos);
           infoWindow.setContent("Location found.");
           infoWindow.open(map);
           map.setCenter(pos);
+          var UPos = new google.maps.Marker({
+            position: pos,
+            map: map,
+            icon:"C:/Users/fonpa/Desktop/CUmusicwalk/clef.png",
+            animation:google.maps.Animation.BOUNCE
+});
         },
         () => {
           handleLocationError(true, infoWindow, map.getCenter());
@@ -177,6 +189,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       ? "Error: The Geolocation service failed."
       : "Error: Your browser doesn't support geolocation."
   );
+ 
 
 }
 
