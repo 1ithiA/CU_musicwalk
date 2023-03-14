@@ -4,7 +4,7 @@
 }
 /* navigation */
 .nav{
-	visibility: visible;
+	visibility: hidden;
 }
 #navigation {
 	background:#ffffff;
