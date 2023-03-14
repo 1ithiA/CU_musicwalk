@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Map</title>
+        <link rel="icon" type="image/x-icon" href="icon/logo.ico">
         <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
     </head>
     <body>
@@ -35,54 +36,53 @@ var point8 = { lat: 13.737094177735804, lng: 100.53186628737458};
 var point9 = { lat: 13.736474278162431, lng: 100.53169557601313};
 
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({
-    position: point1,
-    map: map,
-    animation:google.maps.Animation.BOUNCE
-});
+
 var marker1 = new google.maps.Marker({
     position: point1,
     map: map,
-    animation:google.maps.Animation.BOUNCE
+    icon:"icon/1.png",
 });
 var marker2 = new google.maps.Marker({
     position: point2,
     map: map,
-    icon:"2.png",
-    animation:google.maps.Animation.BOUNCE
+    icon:"icon/2.png",
 });
 var marker3 = new google.maps.Marker({
     position: point3,
     map: map,
+    icon:"icon/3.png",
+
 });
 var marker4 = new google.maps.Marker({
     position: point4,
     map: map,
-});
-var marker4 = new google.maps.Marker({
-    position: point4,
-    map: map,
+    icon:"icon/4.png",
 });
 var marker5 = new google.maps.Marker({
     position: point5,
     map: map,
+    icon:"icon/5.png",
 });
 var marker6 = new google.maps.Marker({
     position: point6,
     map: map,
+    icon:"icon/6.png",
 });
 
 var marker7 = new google.maps.Marker({
     position: point7,
     map: map,
+    icon:"icon/7.png",
 });
 var marker8 = new google.maps.Marker({
     position: point8,
     map: map,
+    icon:"icon/8.png",
 });
 var marker9 = new google.maps.Marker({
     position: point9,
     map: map,
+    icon:"icon/9.png",
 });
 
 /*google.maps.event.addListener(map, 'click', function(event) {
