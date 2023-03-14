@@ -1,66 +1,107 @@
+/*Coordinates*/
+var points = [
+  { lat: 13.735936017497728, lng: 100.53071747155853},
+  { lat: 13.736522929590551, lng: 100.52953254883069},
+  { lat: 13.737257102262152, lng: 100.52858397219916},
+  { lat: 13.738885597064707, lng: 100.52844705631053},
+  { lat: 13.740030280173663, lng: 100.52889362961828},
+  { lat: 13.73972712877361, lng: 100.532117338905},
+  { lat: 13.739521656258006, lng: 100.53230795763523},
+  { lat: 13.737094177735804, lng: 100.53186628737458},
+  { lat: 13.736474278162431, lng: 100.53169557601313}
+]
+var wc = [
+  {lat:13.740050754548463, lng: 100.52872753493585},
+  {lat:13.739793738931343, lng: 100.5308531220263},
+  {lat:13.739551620500956, lng: 100.53247570464549},
+  {lat:13.736470878543077, lng: 100.53003143953347},
+  {lat:13.736807854768212, lng: 100.52895388605143},
+  {lat:13.737535545314351, lng: 100.53132312710174}
+]
+var parking = {
+  "p1":{lat:13.73930838287045, lng: 100.53458867112415},
+  "p2":{lat:13.73395076658045, lng: 100.53331841271162}
+};
+
 function myMap() {
   var mapProp= {
   center:new google.maps.LatLng(13.738649625233439, 100.5324212405303),
   zoom:17,
 };
 
-/*Coordinates*/
-var point1 = { lat: 13.735936017497728, lng: 100.53071747155853};
-var point2 = { lat: 13.736522929590551, lng: 100.52953254883069};
-var point3 = { lat: 13.737257102262152, lng: 100.52858397219916};
-var point4 = { lat: 13.738885597064707, lng: 100.52844705631053};
-var point5 = { lat: 13.740030280173663, lng: 100.52889362961828};
-var point6 = { lat: 13.73972712877361, lng: 100.532117338905};
-var point7 = { lat: 13.739521656258006, lng: 100.53230795763523};
-var point8 = { lat: 13.737094177735804, lng: 100.53186628737458};
-var point9 = { lat: 13.736474278162431, lng: 100.53169557601313};
-
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var pos = {}
+
+for (var p in parking){
+pos[p] =  new google.maps.Marker({
+  map,
+  position: parking[p],
+  icon:"icon/parking.png",
+  });
+}
+for (var w in wc){
+  pos[w] =  new google.maps.Marker({
+    map,
+    position: wc[w],
+    icon:"icon/wc.png",
+    });
+  }
+
+var content1 = '<h1>This is Mahamakut</h1>'+'<p>and it is the first check point<p>'+'<img src = "icon/mahamakut.png">';
 
 var marker1 = new google.maps.Marker({
-position: point1,
+position: points[0],
 map: map,
 icon:"icon/1.png",
 });
-var marker2 = new google.maps.Marker({
-position: point2,
+var info1 = new google.maps.InfoWindow({
+  content:content1,
+})
+marker1.addListener("click", () => {
+  info1.open({
+    anchor: marker1,
+    map,
+  });
+});
+var marker = new google.maps.Marker({
+position: points[1],
 map: map,
 icon:"icon/2.png",
 });
 var marker3 = new google.maps.Marker({
-position: point3,
+position: points[2],
 map: map,
 icon:"icon/3.png",
 
 });
 var marker4 = new google.maps.Marker({
-position: point4,
+position: points[3],
 map: map,
 icon:"icon/4.png",
 });
 var marker5 = new google.maps.Marker({
-position: point5,
+position: points[4],
 map: map,
 icon:"icon/5.png",
 });
 var marker6 = new google.maps.Marker({
-position: point6,
+position: points[5],
 map: map,
 icon:"icon/6.png",
 });
 
 var marker7 = new google.maps.Marker({
-position: point7,
+position: points[6],
 map: map,
 icon:"icon/7.png",
 });
 var marker8 = new google.maps.Marker({
-position: point8,
+position: points[7],
 map: map,
 icon:"icon/8.png",
 });
 var marker9 = new google.maps.Marker({
-position: point9,
+position: points[8],
 map: map,
 icon:"icon/9.png",
 });
@@ -170,5 +211,6 @@ browserHasGeolocation
 : "Error: Your browser doesn't support geolocation."
 );
 
+/*other coords*/ 
 
 }
