@@ -2,11 +2,27 @@
 	font-family: "chulalongkorn";
 	src: url(Chula-Fonts\CHULALONGKORNReg.otf);
 }
-/* navigation */
+/* menu bar */
+.container {
+	display: inline-block;
+	cursor: pointer;
+	border-bottom: 10px #DB5F8E;
+	right: 0%;
+  }
+  
+  .bar1, .bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #DB5F8E;
+	margin: 6px ;
+	transition: 0.5s;
+  }
+  .bar1{
+	margin-top: 5px;
+  }
+  
 .nav{
 	visibility: hidden;
-}
-#navigation {
 	background:#ffffff;
 	margin: -10px;
 	width:100vw;
@@ -14,8 +30,7 @@
 	list-style:none;
 	border-bottom: 1px #222;
 	box-shadow: 0 6px 6px -6px #222;
-	position: sticky;
-
+	
 }
 #navigation li {
 	font-family: 'chulalongkorn';
@@ -38,27 +53,9 @@
 	background:#e3e3e3;
 	color:#DB5F8E;
 }
+/*toggle change*/
 
-#googleMap {
-	margin-top: 10%;
-}
-.container {
-	display: inline-block;
-	cursor: pointer;
-  }
-  
-  .bar1, .bar2, .bar3 {
-	width: 35px;
-	height: 5px;
-	background-color: #DB5F8E;
-	margin: 6px 6px 0px 80vw;
-	transition: 0.5s;
-  }
-  .bar1{
-	margin-top: 5px;
-  }
-  
-  .change .bar1 {
+.change .bar1 {
 	transform: translate(0, 11px) rotate(-45deg);
   }
   
@@ -71,3 +68,8 @@
   .change .nav{
 	visibility: visible;
   }
+
+/*google map*/
+#googleMap {
+	margin-top: 10%;
+}
