@@ -48,6 +48,7 @@ for (var w in wc){
   }
 
 var content1 = '<div class="header"><div id="number"><img src="icon/1.png"></div><div id="name"><h1>อาคารมหามกุฏ</h1><h3>MAHAMAKUT</h3></div><div id="fac"><img src="icon/bench.png"><img src="icon/food.png"><img src="icon/wc.png"></div> </div>'
++'<div class="image"><img src = "icon/mahamakut.png"></div>'+'<div class = "info"></div>'
 
 var marker1 = new google.maps.Marker({
 position: points[0],
