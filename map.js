@@ -25,7 +25,7 @@ var parking = {
 
 function myMap() {
   var mapProp= {
-  center:new google.maps.LatLng(13.738649625233439, 100.5324212405303),
+  center:new google.maps.LatLng(13.738351063201533, 100.53043918229304),
   zoom:17,
 };
 
